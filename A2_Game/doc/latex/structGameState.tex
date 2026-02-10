@@ -1,0 +1,121 @@
+\doxysection{Game\+State Struct Reference}
+\hypertarget{structGameState}{}\label{structGameState}\index{GameState@{GameState}}
+
+
+Holds all the state for a single game session. This struct keeps track of the player, NPC, key/door/exit status, and various flags used by the game loop and HUD.  
+
+
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structGameState_a1cbe53144f0f02540aa49a213274873d}{player\+\_\+y}}
+\item 
+int \mbox{\hyperlink{structGameState_a102f7c6f6108aad447064fdf6b018073}{player\+\_\+x}}
+\item 
+int \mbox{\hyperlink{structGameState_acbfa4bd5b360d5c26812608424f31a51}{npc\+\_\+y}}
+\item 
+int \mbox{\hyperlink{structGameState_a3eefa4a6eeef48df03703d812aa9b136}{npc\+\_\+x}}
+\item 
+int \mbox{\hyperlink{structGameState_adaa66941575585ebd2c9711073b5a04a}{npc\+\_\+dir}}
+\item 
+int \mbox{\hyperlink{structGameState_a404c3045bbc0ffc42397eda70ab46ec3}{has\+\_\+key}}
+\item 
+int \mbox{\hyperlink{structGameState_a4a7114b07dc6550b9c72b99fa2f0024b}{door\+\_\+open}}
+\item 
+int \mbox{\hyperlink{structGameState_acdb5ce4321c01223076a8712f6198047}{level\+\_\+done}}
+\item 
+int \mbox{\hyperlink{structGameState_a28ed035ace9259f3f8b07b2109a6f35d}{paused}}
+\item 
+int \mbox{\hyperlink{structGameState_a30601d3ba033f5485b57107547ce6b44}{running}}
+\item 
+int \mbox{\hyperlink{structGameState_ae455adb5fd873dd748ffae2db6255f87}{level}}
+\item 
+char \mbox{\hyperlink{structGameState_a68508ba10ad6d4d574b87ed2148b5c59}{info}} \mbox{[}128\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds all the state for a single game session. This struct keeps track of the player, NPC, key/door/exit status, and various flags used by the game loop and HUD. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structGameState_a4a7114b07dc6550b9c72b99fa2f0024b}\label{structGameState_a4a7114b07dc6550b9c72b99fa2f0024b} 
+\index{GameState@{GameState}!door\_open@{door\_open}}
+\index{door\_open@{door\_open}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{door\_open}{door\_open}}
+{\footnotesize\ttfamily int Game\+State\+::door\+\_\+open}
+
+\Hypertarget{structGameState_a404c3045bbc0ffc42397eda70ab46ec3}\label{structGameState_a404c3045bbc0ffc42397eda70ab46ec3} 
+\index{GameState@{GameState}!has\_key@{has\_key}}
+\index{has\_key@{has\_key}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{has\_key}{has\_key}}
+{\footnotesize\ttfamily int Game\+State\+::has\+\_\+key}
+
+\Hypertarget{structGameState_a68508ba10ad6d4d574b87ed2148b5c59}\label{structGameState_a68508ba10ad6d4d574b87ed2148b5c59} 
+\index{GameState@{GameState}!info@{info}}
+\index{info@{info}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{info}{info}}
+{\footnotesize\ttfamily char Game\+State\+::info\mbox{[}128\mbox{]}}
+
+\Hypertarget{structGameState_ae455adb5fd873dd748ffae2db6255f87}\label{structGameState_ae455adb5fd873dd748ffae2db6255f87} 
+\index{GameState@{GameState}!level@{level}}
+\index{level@{level}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily int Game\+State\+::level}
+
+\Hypertarget{structGameState_acdb5ce4321c01223076a8712f6198047}\label{structGameState_acdb5ce4321c01223076a8712f6198047} 
+\index{GameState@{GameState}!level\_done@{level\_done}}
+\index{level\_done@{level\_done}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{level\_done}{level\_done}}
+{\footnotesize\ttfamily int Game\+State\+::level\+\_\+done}
+
+\Hypertarget{structGameState_adaa66941575585ebd2c9711073b5a04a}\label{structGameState_adaa66941575585ebd2c9711073b5a04a} 
+\index{GameState@{GameState}!npc\_dir@{npc\_dir}}
+\index{npc\_dir@{npc\_dir}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{npc\_dir}{npc\_dir}}
+{\footnotesize\ttfamily int Game\+State\+::npc\+\_\+dir}
+
+\texorpdfstring{$<$}{<} NPC current row and column position on the map \Hypertarget{structGameState_a3eefa4a6eeef48df03703d812aa9b136}\label{structGameState_a3eefa4a6eeef48df03703d812aa9b136} 
+\index{GameState@{GameState}!npc\_x@{npc\_x}}
+\index{npc\_x@{npc\_x}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{npc\_x}{npc\_x}}
+{\footnotesize\ttfamily int Game\+State\+::npc\+\_\+x}
+
+\Hypertarget{structGameState_acbfa4bd5b360d5c26812608424f31a51}\label{structGameState_acbfa4bd5b360d5c26812608424f31a51} 
+\index{GameState@{GameState}!npc\_y@{npc\_y}}
+\index{npc\_y@{npc\_y}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{npc\_y}{npc\_y}}
+{\footnotesize\ttfamily int Game\+State\+::npc\+\_\+y}
+
+\texorpdfstring{$<$}{<} Player current row and column position on the map . \Hypertarget{structGameState_a28ed035ace9259f3f8b07b2109a6f35d}\label{structGameState_a28ed035ace9259f3f8b07b2109a6f35d} 
+\index{GameState@{GameState}!paused@{paused}}
+\index{paused@{paused}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{paused}{paused}}
+{\footnotesize\ttfamily int Game\+State\+::paused}
+
+1 when the game is paused. \Hypertarget{structGameState_a102f7c6f6108aad447064fdf6b018073}\label{structGameState_a102f7c6f6108aad447064fdf6b018073} 
+\index{GameState@{GameState}!player\_x@{player\_x}}
+\index{player\_x@{player\_x}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{player\_x}{player\_x}}
+{\footnotesize\ttfamily int Game\+State\+::player\+\_\+x}
+
+\Hypertarget{structGameState_a1cbe53144f0f02540aa49a213274873d}\label{structGameState_a1cbe53144f0f02540aa49a213274873d} 
+\index{GameState@{GameState}!player\_y@{player\_y}}
+\index{player\_y@{player\_y}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{player\_y}{player\_y}}
+{\footnotesize\ttfamily int Game\+State\+::player\+\_\+y}
+
+\Hypertarget{structGameState_a30601d3ba033f5485b57107547ce6b44}\label{structGameState_a30601d3ba033f5485b57107547ce6b44} 
+\index{GameState@{GameState}!running@{running}}
+\index{running@{running}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily int Game\+State\+::running}
+
+1 while the level loop should keep running. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{game_8h}{game.\+h}}\end{DoxyCompactItemize}

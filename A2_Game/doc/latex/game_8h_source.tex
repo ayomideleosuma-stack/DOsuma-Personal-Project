@@ -1,0 +1,48 @@
+\doxysection{game.\+h}
+\hypertarget{game_8h_source}{}\label{game_8h_source}\mbox{\hyperlink{game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ game.h}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ GAME\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ GAME\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <ncurses.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MAP\_ROWS\ 30}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MAP\_COLS\ 80}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ player\_y,\ \mbox{\hyperlink{structGameState_a102f7c6f6108aad447064fdf6b018073}{player\_x}};\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ npc\_y,\ \mbox{\hyperlink{structGameState_a3eefa4a6eeef48df03703d812aa9b136}{npc\_x}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGameState_adaa66941575585ebd2c9711073b5a04a}{npc\_dir}};\ \ \ \ \ \ \ \ \textcolor{comment}{//\ horizontal\ patrol:\ +1\ or\ -\/1\ /**<\ NPC\ patrol\ direction:\ +1\ for\ right,\ -\/1\ for\ left.\ */}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGameState_a404c3045bbc0ffc42397eda70ab46ec3}{has\_key}};\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0\ =\ no,\ 1\ =\ yes\ \ /**<\ 1\ if\ the\ player\ has\ obtained\ the\ key\ from\ the\ NPC.\ */}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGameState_a4a7114b07dc6550b9c72b99fa2f0024b}{door\_open}};\ \ \ \ \ \ \textcolor{comment}{//\ 0\ =\ closed,\ 1\ =\ open\ \ /**<\ 1\ if\ the\ locked\ door\ has\ been\ opened.\ */}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGameState_acdb5ce4321c01223076a8712f6198047}{level\_done}};\ \ \ \ \ \textcolor{comment}{//\ 1\ when\ exit\ reached\ /**<\ 1\ when\ the\ player\ has\ reached\ the\ exit\ tile.\ */}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGameState_a28ed035ace9259f3f8b07b2109a6f35d}{paused}};\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGameState_a30601d3ba033f5485b57107547ce6b44}{running}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structGameState_ae455adb5fd873dd748ffae2db6255f87}{level}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1\ or\ 2\ \ /**<\ Current\ level\ number*/}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{char}\ info[128];\ \ \ \ \ \textcolor{comment}{//\ message\ line\ /**<\ Status\ /\ dialogue\ message\ shown\ in\ the\ HUD.\ */}}
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{structGameState}{GameState}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{/*\ ncurses\ setup\ */}}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a33290605d46d7f299b43e037d1c15348}{init\_ncurses}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_ae496a0a3f257003728ed0da2ba6ea734}{shutdown\_ncurses}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00064\ \textcolor{comment}{/*\ level\ +\ game\ */}}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a11426211d309072d5acbef53783db681}{init\_level}}(\textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{char}\ map[\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\_ROWS}}][\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\_COLS}}],\ \mbox{\hyperlink{structGameState}{GameState}}\ *state);}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a4ee50154e786e239fe5dc5b1ddd84304}{draw\_game}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ map[\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\_ROWS}}][\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\_COLS}}],\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structGameState}{GameState}}\ *state);}
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{game_8h_af5ff1e12723fa9baf2d615a66896e991}{handle\_quit\_prompt}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a3d72064160f449378b5fe1a62ad0b095}{update\_npc}}(\mbox{\hyperlink{structGameState}{GameState}}\ *state,\ \textcolor{keywordtype}{char}\ map[\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\_ROWS}}][\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\_COLS}}]);}
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{game_8h_ad404cd562d442e7df738ff2f2ccc640d}{is\_adjacent\_to\_npc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structGameState}{GameState}}\ *state);}
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a6f58c6888fa9f0ea40ace7594ba48977}{attempt\_move\_player}}(\textcolor{keywordtype}{int}\ dy,\ \textcolor{keywordtype}{int}\ dx,\ \mbox{\hyperlink{structGameState}{GameState}}\ *state,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ map[\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\_ROWS}}][\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\_COLS}}]);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a6a755e614b2f9a46691744323e6a9570}{play\_level}}(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00121\ }
+
+\end{DoxyCode}

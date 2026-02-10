@@ -1,0 +1,226 @@
+\doxysection{game.\+c File Reference}
+\hypertarget{game_8c}{}\label{game_8c}\index{game.c@{game.c}}
+
+
+Implementation of the core game logic.  
+
+
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for game.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{game_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game_8c_a33290605d46d7f299b43e037d1c15348}{init\+\_\+ncurses}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize ncurses and configure the terminal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_ae496a0a3f257003728ed0da2ba6ea734}{shutdown\+\_\+ncurses}} (void)
+\begin{DoxyCompactList}\small\item\em Restore the terminal and shut down ncurses. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{game_8c_a133e25b64e6a0dd136da07df5f552efe}{clear\+\_\+map}} (char map\mbox{[}\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\+\_\+\+ROWS}}\mbox{]}\mbox{[}\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\+\_\+\+COLS}}\mbox{]})
+\item 
+static void \mbox{\hyperlink{game_8c_a162dbe1cb798813fc93bb0d5d09a00d1}{add\+\_\+borders}} (char map\mbox{[}\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\+\_\+\+ROWS}}\mbox{]}\mbox{[}\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\+\_\+\+COLS}}\mbox{]})
+\item 
+static void \mbox{\hyperlink{game_8c_a80c97be90168129a6a51c275c3036a48}{add\+\_\+simple\+\_\+maze\+\_\+level1}} (char map\mbox{[}\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\+\_\+\+ROWS}}\mbox{]}\mbox{[}\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\+\_\+\+COLS}}\mbox{]})
+\item 
+static void \mbox{\hyperlink{game_8c_aaddd5ad7a425110a31d2ec3b0e624a1c}{add\+\_\+simple\+\_\+maze\+\_\+level2}} (char map\mbox{[}\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\+\_\+\+ROWS}}\mbox{]}\mbox{[}\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\+\_\+\+COLS}}\mbox{]})
+\item 
+void \mbox{\hyperlink{game_8c_a11426211d309072d5acbef53783db681}{init\+\_\+level}} (int level, char map\mbox{[}\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\+\_\+\+ROWS}}\mbox{]}\mbox{[}\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\+\_\+\+COLS}}\mbox{]}, \mbox{\hyperlink{structGameState}{Game\+State}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Initialize the map and \doxylink{structGameState}{Game\+State} for a given level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a4ee50154e786e239fe5dc5b1ddd84304}{draw\+\_\+game}} (const char map\mbox{[}\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\+\_\+\+ROWS}}\mbox{]}\mbox{[}\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\+\_\+\+COLS}}\mbox{]}, const \mbox{\hyperlink{structGameState}{Game\+State}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Draw the current map, player, NPC, and HUD to the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_af5ff1e12723fa9baf2d615a66896e991}{handle\+\_\+quit\+\_\+prompt}} (void)
+\begin{DoxyCompactList}\small\item\em Ask the user to confirm quitting the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a3d72064160f449378b5fe1a62ad0b095}{update\+\_\+npc}} (\mbox{\hyperlink{structGameState}{Game\+State}} \texorpdfstring{$\ast$}{*}state, char map\mbox{[}\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\+\_\+\+ROWS}}\mbox{]}\mbox{[}\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\+\_\+\+COLS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Update the NPC\textquotesingle{}s patrol position on the map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_ad404cd562d442e7df738ff2f2ccc640d}{is\+\_\+adjacent\+\_\+to\+\_\+npc}} (const \mbox{\hyperlink{structGameState}{Game\+State}} \texorpdfstring{$\ast$}{*}state)
+\begin{DoxyCompactList}\small\item\em Check if the player is standing next to the NPC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a6f58c6888fa9f0ea40ace7594ba48977}{attempt\+\_\+move\+\_\+player}} (int dy, int dx, \mbox{\hyperlink{structGameState}{Game\+State}} \texorpdfstring{$\ast$}{*}state, char map\mbox{[}\mbox{\hyperlink{game_8h_abeb9c94c1e5b0cb6b5aea0884b1fb942}{MAP\+\_\+\+ROWS}}\mbox{]}\mbox{[}\mbox{\hyperlink{game_8h_a0c8fa5f924e3cb0ab18aa9ef5563ec23}{MAP\+\_\+\+COLS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Attempt to move the player by the given offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a6a755e614b2f9a46691744323e6a9570}{play\+\_\+level}} (int level)
+\begin{DoxyCompactList}\small\item\em Run the main gameplay loop for the given level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the core game logic. 
+
+Contains the functions that initialize levels, update NPCs, move the player, handle interactions (key, door, exit), and draw the game state using ncurses. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{game_8c_a162dbe1cb798813fc93bb0d5d09a00d1}\label{game_8c_a162dbe1cb798813fc93bb0d5d09a00d1} 
+\index{game.c@{game.c}!add\_borders@{add\_borders}}
+\index{add\_borders@{add\_borders}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{add\_borders()}{add\_borders()}}
+{\footnotesize\ttfamily static void add\+\_\+borders (\begin{DoxyParamCaption}\item[{char}]{map\mbox{[}\+MAP\+\_\+\+ROWS\mbox{]}\mbox{[}\+MAP\+\_\+\+COLS\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{game_8c_a80c97be90168129a6a51c275c3036a48}\label{game_8c_a80c97be90168129a6a51c275c3036a48} 
+\index{game.c@{game.c}!add\_simple\_maze\_level1@{add\_simple\_maze\_level1}}
+\index{add\_simple\_maze\_level1@{add\_simple\_maze\_level1}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{add\_simple\_maze\_level1()}{add\_simple\_maze\_level1()}}
+{\footnotesize\ttfamily static void add\+\_\+simple\+\_\+maze\+\_\+level1 (\begin{DoxyParamCaption}\item[{char}]{map\mbox{[}\+MAP\+\_\+\+ROWS\mbox{]}\mbox{[}\+MAP\+\_\+\+COLS\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{game_8c_aaddd5ad7a425110a31d2ec3b0e624a1c}\label{game_8c_aaddd5ad7a425110a31d2ec3b0e624a1c} 
+\index{game.c@{game.c}!add\_simple\_maze\_level2@{add\_simple\_maze\_level2}}
+\index{add\_simple\_maze\_level2@{add\_simple\_maze\_level2}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{add\_simple\_maze\_level2()}{add\_simple\_maze\_level2()}}
+{\footnotesize\ttfamily static void add\+\_\+simple\+\_\+maze\+\_\+level2 (\begin{DoxyParamCaption}\item[{char}]{map\mbox{[}\+MAP\+\_\+\+ROWS\mbox{]}\mbox{[}\+MAP\+\_\+\+COLS\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{game_8c_a6f58c6888fa9f0ea40ace7594ba48977}\label{game_8c_a6f58c6888fa9f0ea40ace7594ba48977} 
+\index{game.c@{game.c}!attempt\_move\_player@{attempt\_move\_player}}
+\index{attempt\_move\_player@{attempt\_move\_player}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{attempt\_move\_player()}{attempt\_move\_player()}}
+{\footnotesize\ttfamily void attempt\+\_\+move\+\_\+player (\begin{DoxyParamCaption}\item[{int}]{dy,  }\item[{int}]{dx,  }\item[{\mbox{\hyperlink{structGameState}{Game\+State}} \texorpdfstring{$\ast$}{*}}]{state,  }\item[{char}]{map\mbox{[}\+MAP\+\_\+\+ROWS\mbox{]}\mbox{[}\+MAP\+\_\+\+COLS\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Attempt to move the player by the given offset. 
+
+Handles collision with walls, locked doors, opening the door when the key is held, and detecting the exit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dy} & Change in row (Y). \\
+\hline
+{\em dx} & Change in column (X). \\
+\hline
+{\em state} & The current game state (updated if movement occurs). \\
+\hline
+{\em map} & The current map (door tile may be modified). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game_8c_a133e25b64e6a0dd136da07df5f552efe}\label{game_8c_a133e25b64e6a0dd136da07df5f552efe} 
+\index{game.c@{game.c}!clear\_map@{clear\_map}}
+\index{clear\_map@{clear\_map}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{clear\_map()}{clear\_map()}}
+{\footnotesize\ttfamily static void clear\+\_\+map (\begin{DoxyParamCaption}\item[{char}]{map\mbox{[}\+MAP\+\_\+\+ROWS\mbox{]}\mbox{[}\+MAP\+\_\+\+COLS\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{game_8c_a4ee50154e786e239fe5dc5b1ddd84304}\label{game_8c_a4ee50154e786e239fe5dc5b1ddd84304} 
+\index{game.c@{game.c}!draw\_game@{draw\_game}}
+\index{draw\_game@{draw\_game}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{draw\_game()}{draw\_game()}}
+{\footnotesize\ttfamily void draw\+\_\+game (\begin{DoxyParamCaption}\item[{const char}]{map\mbox{[}\+MAP\+\_\+\+ROWS\mbox{]}\mbox{[}\+MAP\+\_\+\+COLS\mbox{]},  }\item[{const \mbox{\hyperlink{structGameState}{Game\+State}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Draw the current map, player, NPC, and HUD to the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & The current map contents. \\
+\hline
+{\em state} & The current game state to visualize. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game_8c_af5ff1e12723fa9baf2d615a66896e991}\label{game_8c_af5ff1e12723fa9baf2d615a66896e991} 
+\index{game.c@{game.c}!handle\_quit\_prompt@{handle\_quit\_prompt}}
+\index{handle\_quit\_prompt@{handle\_quit\_prompt}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{handle\_quit\_prompt()}{handle\_quit\_prompt()}}
+{\footnotesize\ttfamily int handle\+\_\+quit\+\_\+prompt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Ask the user to confirm quitting the game. 
+
+\begin{DoxyReturn}{Returns}
+1 if the user chooses \textquotesingle{}y\textquotesingle{} or \textquotesingle{}Y\textquotesingle{}, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{game_8c_a11426211d309072d5acbef53783db681}\label{game_8c_a11426211d309072d5acbef53783db681} 
+\index{game.c@{game.c}!init\_level@{init\_level}}
+\index{init\_level@{init\_level}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{init\_level()}{init\_level()}}
+{\footnotesize\ttfamily void init\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{char}]{map\mbox{[}\+MAP\+\_\+\+ROWS\mbox{]}\mbox{[}\+MAP\+\_\+\+COLS\mbox{]},  }\item[{\mbox{\hyperlink{structGameState}{Game\+State}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Initialize the map and \doxylink{structGameState}{Game\+State} for a given level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Level number to load (1 or 2). \\
+\hline
+{\em map} & 2D character buffer that will hold the level layout. \\
+\hline
+{\em state} & Pointer to a \doxylink{structGameState}{Game\+State} struct to initialize. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game_8c_a33290605d46d7f299b43e037d1c15348}\label{game_8c_a33290605d46d7f299b43e037d1c15348} 
+\index{game.c@{game.c}!init\_ncurses@{init\_ncurses}}
+\index{init\_ncurses@{init\_ncurses}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{init\_ncurses()}{init\_ncurses()}}
+{\footnotesize\ttfamily void init\+\_\+ncurses (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize ncurses and configure the terminal. 
+
+Sets up cbreak mode, disables echo, enables keypad input, and hides the cursor. Must be called before any ncurses calls. \Hypertarget{game_8c_ad404cd562d442e7df738ff2f2ccc640d}\label{game_8c_ad404cd562d442e7df738ff2f2ccc640d} 
+\index{game.c@{game.c}!is\_adjacent\_to\_npc@{is\_adjacent\_to\_npc}}
+\index{is\_adjacent\_to\_npc@{is\_adjacent\_to\_npc}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{is\_adjacent\_to\_npc()}{is\_adjacent\_to\_npc()}}
+{\footnotesize\ttfamily int is\+\_\+adjacent\+\_\+to\+\_\+npc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structGameState}{Game\+State}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+
+
+Check if the player is standing next to the NPC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The current game state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the player is adjacent, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{game_8c_a6a755e614b2f9a46691744323e6a9570}\label{game_8c_a6a755e614b2f9a46691744323e6a9570} 
+\index{game.c@{game.c}!play\_level@{play\_level}}
+\index{play\_level@{play\_level}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{play\_level()}{play\_level()}}
+{\footnotesize\ttfamily void play\+\_\+level (\begin{DoxyParamCaption}\item[{int}]{level }\end{DoxyParamCaption})}
+
+
+
+Run the main gameplay loop for the given level. 
+
+Handles input, updates the NPC, moves the player, and redraws the screen until the level is completed or the player chooses to quit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & Level number to play (1 or 2). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game_8c_ae496a0a3f257003728ed0da2ba6ea734}\label{game_8c_ae496a0a3f257003728ed0da2ba6ea734} 
+\index{game.c@{game.c}!shutdown\_ncurses@{shutdown\_ncurses}}
+\index{shutdown\_ncurses@{shutdown\_ncurses}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{shutdown\_ncurses()}{shutdown\_ncurses()}}
+{\footnotesize\ttfamily void shutdown\+\_\+ncurses (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Restore the terminal and shut down ncurses. 
+
+\Hypertarget{game_8c_a3d72064160f449378b5fe1a62ad0b095}\label{game_8c_a3d72064160f449378b5fe1a62ad0b095} 
+\index{game.c@{game.c}!update\_npc@{update\_npc}}
+\index{update\_npc@{update\_npc}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{update\_npc()}{update\_npc()}}
+{\footnotesize\ttfamily void update\+\_\+npc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGameState}{Game\+State}} \texorpdfstring{$\ast$}{*}}]{state,  }\item[{char}]{map\mbox{[}\+MAP\+\_\+\+ROWS\mbox{]}\mbox{[}\+MAP\+\_\+\+COLS\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Update the NPC\textquotesingle{}s patrol position on the map. 
+
+The NPC moves horizontally between walls or map boundaries.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The current game state (NPC position/direction updated). \\
+\hline
+{\em map} & The map used to check for walls and bounds. \\
+\hline
+\end{DoxyParams}

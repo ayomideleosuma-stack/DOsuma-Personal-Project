@@ -1,0 +1,54 @@
+\doxysection{menu.\+h File Reference}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{menu.h@{menu.h}}
+
+
+Splash screen and main menu interface.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{menu_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8h_a67fa01af150840ef4ffded18d809f684}{splash\+\_\+screen}} (void)
+\begin{DoxyCompactList}\small\item\em Show the splash screen with the game title and basic instructions. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_a219c351c9f40d16f05553c99a3b7e378}{main\+\_\+menu}} (void)
+\begin{DoxyCompactList}\small\item\em Display the main menu and return the user\textquotesingle{}s choice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Splash screen and main menu interface. 
+
+Declares functions used to show the game title screen and the main menu that lets the player choose a level or exit. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8h_a219c351c9f40d16f05553c99a3b7e378}\label{menu_8h_a219c351c9f40d16f05553c99a3b7e378} 
+\index{menu.h@{menu.h}!main\_menu@{main\_menu}}
+\index{main\_menu@{main\_menu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{main\_menu()}{main\_menu()}}
+{\footnotesize\ttfamily int main\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Display the main menu and return the user\textquotesingle{}s choice. 
+
+\begin{DoxyReturn}{Returns}
+0 to exit the game, 1 for level 1, 2 for level 2. 
+\end{DoxyReturn}
+\Hypertarget{menu_8h_a67fa01af150840ef4ffded18d809f684}\label{menu_8h_a67fa01af150840ef4ffded18d809f684} 
+\index{menu.h@{menu.h}!splash\_screen@{splash\_screen}}
+\index{splash\_screen@{splash\_screen}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{splash\_screen()}{splash\_screen()}}
+{\footnotesize\ttfamily void splash\+\_\+screen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Show the splash screen with the game title and basic instructions. 
+
+Waits for a key press before returning. 

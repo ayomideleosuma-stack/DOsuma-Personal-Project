@@ -1,0 +1,57 @@
+\doxysection{menu.\+c File Reference}
+\hypertarget{menu_8c}{}\label{menu_8c}\index{menu.c@{menu.c}}
+
+
+Implementation of the splash screen and main menu.  
+
+
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+Include dependency graph for menu.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{menu_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8c_a67fa01af150840ef4ffded18d809f684}{splash\+\_\+screen}} (void)
+\begin{DoxyCompactList}\small\item\em Show the splash screen with the game title and basic instructions. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8c_a219c351c9f40d16f05553c99a3b7e378}{main\+\_\+menu}} (void)
+\begin{DoxyCompactList}\small\item\em Display the main menu and return the user\textquotesingle{}s choice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the splash screen and main menu. 
+
+Uses ncurses to draw the title screen and menu options, and reads the user\textquotesingle{}s choice for which level to play or whether to exit. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8c_a219c351c9f40d16f05553c99a3b7e378}\label{menu_8c_a219c351c9f40d16f05553c99a3b7e378} 
+\index{menu.c@{menu.c}!main\_menu@{main\_menu}}
+\index{main\_menu@{main\_menu}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{main\_menu()}{main\_menu()}}
+{\footnotesize\ttfamily int main\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Display the main menu and return the user\textquotesingle{}s choice. 
+
+\begin{DoxyReturn}{Returns}
+0 to exit the game, 1 for level 1, 2 for level 2. 
+\end{DoxyReturn}
+\Hypertarget{menu_8c_a67fa01af150840ef4ffded18d809f684}\label{menu_8c_a67fa01af150840ef4ffded18d809f684} 
+\index{menu.c@{menu.c}!splash\_screen@{splash\_screen}}
+\index{splash\_screen@{splash\_screen}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{splash\_screen()}{splash\_screen()}}
+{\footnotesize\ttfamily void splash\+\_\+screen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Show the splash screen with the game title and basic instructions. 
+
+Waits for a key press before returning. 
